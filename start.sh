@@ -1,5 +1,6 @@
 #!/bin/bash
-apt-get update && apt-get dist-upgrade -y
-service php5-fpm start
-service nginx start
+apk update && apk upgrade
+rm -rf /var/cache/apk/*
+php-fpm
+nginx
 tail -f /var/log/nginx/access.log
